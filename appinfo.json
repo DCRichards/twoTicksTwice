@@ -1,0 +1,31 @@
+{
+  "uuid": "a2c06be3-7a47-4f34-bb1a-4a163a34f815",
+  "shortName": "TTF",
+  "longName": "Total Time Forever",
+  "companyName": "DCRichards",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+        {
+            "type": "png",
+            "name": "BT_IMG_CON",
+            "file": "bluetooth_connected.png"
+        },
+        {
+            "type": "png",
+            "name": "BT_IMG_DISCON",
+            "file": "bluetooth_disconnected.png"
+        }
+        
+    ]
+  }
+}
