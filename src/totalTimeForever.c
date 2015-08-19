@@ -16,6 +16,8 @@ static BitmapLayer *s_bt_bitmap_layer;
 static GBitmap *s_bt_connected_bitmap;
 static GBitmap *s_bt_disconnected_bitmap;
 
+static GFont ds_digital_font_60;
+
 static void update_time() {
     time_t temp = time(NULL); 
     struct tm *tick_time = localtime(&temp);
@@ -81,11 +83,12 @@ static void main_window_load(Window *window) {
     s_bt_bitmap_layer = bitmap_layer_create(GRect(100, 10, 22, 22));
     
     // time layer
-    s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
+    s_time_layer = text_layer_create(GRect(0, 40, 144, 80));
     text_layer_set_background_color(s_time_layer, GColorClear);
     text_layer_set_text_color(s_time_layer, GColorBlack);
     text_layer_set_text(s_time_layer, "00:00");
-    text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+    ds_digital_font_60 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DS_DIGITAL_60));
+    text_layer_set_font(s_time_layer, ds_digital_font_60);
     text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
     
     // date layer
@@ -117,6 +120,8 @@ static void main_window_unload(Window *window) {
     gbitmap_destroy(s_bt_connected_bitmap);
     gbitmap_destroy(s_bt_disconnected_bitmap);
     bitmap_layer_destroy(s_bt_bitmap_layer);
+    
+    fonts_unload_custom_font(ds_digital_font_60);
 }
 
 static void init() {

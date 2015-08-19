@@ -16,14 +16,20 @@
   "resources": {
     "media": [
         {
+            "characterRegex": "[0-9:A-Za-z]",
+            "type": "font",
+            "name": "DS_DIGITAL_60",
+            "file": "fonts/DSDIGIB.ttf"
+        },
+        {
             "type": "png",
             "name": "BT_IMG_CON",
-            "file": "bluetooth_connected.png"
+            "file": "img/bluetooth_connected.png"
         },
         {
             "type": "png",
             "name": "BT_IMG_DISCON",
-            "file": "bluetooth_disconnected.png"
+            "file": "img/bluetooth_disconnected.png"
         }
         
     ]
