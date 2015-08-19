@@ -6,6 +6,7 @@
  **/
 
 #include <pebble.h>
+#include "utilities.h"
 
 static Window *s_main_window;
 static TextLayer *s_time_layer;
@@ -35,9 +36,9 @@ static void update_time() {
 static void update_date() {
     time_t temp = time(NULL); 
     struct tm *tick_time = localtime(&temp);
-    static char buffer[] = "Sept 31 (Thur)";
-    
-    strftime(buffer, sizeof("Sept 31 (Thur)"), "%b %d (%a)", tick_time);
+    static char buffer[] = "31 Sept";
+    strftime(buffer, sizeof(buffer), "%d %b", tick_time);
+    upper_case(buffer);
     text_layer_set_text(s_date_layer, buffer);
 }
 
@@ -95,8 +96,8 @@ static void main_window_load(Window *window) {
     s_date_layer = text_layer_create(GRect(0, 120, 144, 50));
     text_layer_set_background_color(s_date_layer, GColorClear);
     text_layer_set_text_color(s_date_layer, GColorBlack);
-    text_layer_set_text(s_date_layer, "Sept 31 (Thur)");
-    text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    text_layer_set_text(s_date_layer, "31 Sept");
+    text_layer_set_font(s_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
     text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
     
     // battery layer
