@@ -81,7 +81,7 @@ static void main_window_load(Window *window) {
     // bluetooth layer
     s_bt_connected_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BT_IMG_CON);
     s_bt_disconnected_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BT_IMG_DISCON);
-    s_bt_bitmap_layer = bitmap_layer_create(GRect(100, 10, 22, 22));
+    s_bt_bitmap_layer = bitmap_layer_create(GRect(100, 10, 28, 28));
     
     // time layer
     s_time_layer = text_layer_create(GRect(0, 40, 144, 80));
