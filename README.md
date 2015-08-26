@@ -15,4 +15,4 @@ Clone this repo then run the following:
 	
 ### Stacktrace or GTFO
 
-We're all here to learn. Bugs, suggestions, pull requests and all that stuff welcome through the usual issues submission.
+We're all here to learn. Bugs, suggestions, pull requests and all that stuff welcome.
