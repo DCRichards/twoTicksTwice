@@ -1,12 +1,12 @@
 {
   "uuid": "a2c06be3-7a47-4f34-bb1a-4a163a34f815",
-  "shortName": "TTF",
-  "longName": "Total Time Forever",
+  "shortName": "Two Ticks Twice",
+  "longName": "Two Ticks Twice",
   "companyName": "DCRichards",
   "versionCode": 1,
   "versionLabel": "1.0",
   "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt"],
+  "targetPlatforms": ["aplite"],
   "watchapp": {
     "watchface": true
   },
