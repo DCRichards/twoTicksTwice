@@ -30,8 +30,17 @@
             "type": "png",
             "name": "BT_IMG_DISCON",
             "file": "img/bluetooth_disconnected.png"
+        },
+        {
+            "type": "png",
+            "name": "BATT_IMG",
+            "file": "img/battery.png"
+        },
+        {
+            "type": "png",
+            "name": "BATT_IMG_CHRG",
+            "file": "img/battery_charging.png"
         }
-        
     ]
   }
 }
