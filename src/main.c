@@ -63,20 +63,9 @@ static void update_battery() {
 }
 
 static void update_bt_status() {
-    
     if (bluetooth_connection_service_peek()) {
-        VibePattern pat = {
-            .durations = connect_vibrate_pattern,
-            .num_segments = ARRAY_LENGTH(connect_vibrate_pattern),
-        };
-        vibes_enqueue_custom_pattern(pat);
         bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_connected_bitmap);
     } else {
-        VibePattern pat = {
-            .durations = disconnect_vibrate_pattern,
-            .num_segments = ARRAY_LENGTH(disconnect_vibrate_pattern),
-        };
-        vibes_enqueue_custom_pattern(pat);
         bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_disconnected_bitmap);
     }
 }
@@ -97,6 +86,21 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 }
 
 static void bt_handler(bool connected) {
+    // vibrate here otherwise we will vibe every time 
+    // the watch face loads.
+    if (connected) {
+        VibePattern pat = {
+            .durations = connect_vibrate_pattern,
+            .num_segments = ARRAY_LENGTH(connect_vibrate_pattern),
+        };
+        vibes_enqueue_custom_pattern(pat);    
+    } else {
+        VibePattern pat = {
+            .durations = disconnect_vibrate_pattern,
+            .num_segments = ARRAY_LENGTH(disconnect_vibrate_pattern),
+        };
+        vibes_enqueue_custom_pattern(pat);
+    }
     update_bt_status();
 }
 
