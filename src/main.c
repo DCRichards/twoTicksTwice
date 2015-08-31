@@ -20,8 +20,10 @@ static GBitmap *s_bt_connected_bitmap;
 static GBitmap *s_bt_disconnected_bitmap;
 static GBitmap *s_batt_bitmap;
 static GBitmap *s_batt_chrg_bitmap;
-
 static GFont ds_digital_font_60;
+
+static const uint32_t const disconnect_vibrate_pattern[] = { 100, 100, 100 };
+static const uint32_t const connect_vibrate_pattern[] = { 100 };
 
 static void update_time() {
     time_t temp = time(NULL); 
@@ -61,10 +63,21 @@ static void update_battery() {
 }
 
 static void update_bt_status() {
+    
     if (bluetooth_connection_service_peek()) {
-        bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_connected_bitmap); 
+        VibePattern pat = {
+            .durations = connect_vibrate_pattern,
+            .num_segments = ARRAY_LENGTH(connect_vibrate_pattern),
+        };
+        vibes_enqueue_custom_pattern(pat);
+        bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_connected_bitmap);
     } else {
-        bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_disconnected_bitmap); 
+        VibePattern pat = {
+            .durations = disconnect_vibrate_pattern,
+            .num_segments = ARRAY_LENGTH(disconnect_vibrate_pattern),
+        };
+        vibes_enqueue_custom_pattern(pat);
+        bitmap_layer_set_bitmap(s_bt_bitmap_layer, s_bt_disconnected_bitmap);
     }
 }
 
