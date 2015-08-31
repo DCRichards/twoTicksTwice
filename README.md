@@ -2,6 +2,9 @@
 
 __Two Ticks Twice__ is a simple [Pebble](http://getpebble.com/) watchface which provides a simple display for essential watch information (time, date, battery and bluetooth connection).
 
+![](https://github.com/DCRichards/twoTicksTwice/blob/master/screenshots/standard_screenshot.png?raw=true)
+![](https://github.com/DCRichards/twoTicksTwice/blob/master/screenshots/charging_screenshot.png?raw=true)
+
 ### Build & Install
 
 Clone this repo then run the following:
