@@ -20,7 +20,7 @@ static GBitmap *s_bt_connected_bitmap;
 static GBitmap *s_bt_disconnected_bitmap;
 static GBitmap *s_batt_bitmap;
 static GBitmap *s_batt_chrg_bitmap;
-static GFont ds_digital_font_60;
+static GFont league_gothic_font_72;
 
 static const uint32_t const disconnect_vibrate_pattern[] = { 100, 100, 100 };
 static const uint32_t const connect_vibrate_pattern[] = { 100 };
@@ -107,12 +107,12 @@ static void main_window_load(Window *window) {
     s_bt_bitmap_layer = bitmap_layer_create(GRect(110, 12, 28, 28));
     
     // time layer
-    s_time_layer = text_layer_create(GRect(0, 48, 144, 80));
+    s_time_layer = text_layer_create(GRect(0, 40, 144, 80));
     text_layer_set_background_color(s_time_layer, GColorClear);
     text_layer_set_text_color(s_time_layer, GColorWhite);
     text_layer_set_text(s_time_layer, "00:00");
-    ds_digital_font_60 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DS_DIGITAL_60));
-    text_layer_set_font(s_time_layer, ds_digital_font_60);
+    league_gothic_font_72 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_LEAGUE_GOTHIC_72));
+    text_layer_set_font(s_time_layer, league_gothic_font_72);
     text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
     
     // line beneath time
@@ -161,7 +161,7 @@ static void main_window_unload(Window *window) {
     bitmap_layer_destroy(s_batt_bitmap_layer);
     bitmap_layer_destroy(s_bt_bitmap_layer);
     
-    fonts_unload_custom_font(ds_digital_font_60);
+    fonts_unload_custom_font(league_gothic_font_72);
 }
 
 static void init() {

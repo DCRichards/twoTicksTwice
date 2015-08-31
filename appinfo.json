@@ -18,8 +18,8 @@
         {
             "characterRegex": "[0-9:A-Za-z]",
             "type": "font",
-            "name": "DS_DIGITAL_60",
-            "file": "fonts/DSDIGIB.ttf"
+            "name": "LEAGUE_GOTHIC_72",
+            "file": "fonts/LeagueGothic.ttf"
         },
         {
             "type": "png",
