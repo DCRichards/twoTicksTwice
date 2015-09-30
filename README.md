@@ -1,9 +1,13 @@
 # Two Ticks Twice
 
-__Two Ticks Twice__ is a simple [Pebble](http://getpebble.com/) watchface which provides a simple display for essential watch information (time, date, battery and bluetooth connection).
+__Two Ticks Twice__ is a simple and readable watchface for Pebble. It provides an easy to glance at display with current time and date as well as a bluetooth connection notifier (with vibrate notification) and battery level.
+
+### Available Now!
 
 ![](https://github.com/DCRichards/twoTicksTwice/blob/master/screenshots/standard_screenshot.png?raw=true)
 ![](https://github.com/DCRichards/twoTicksTwice/blob/master/screenshots/charging_screenshot.png?raw=true)
+
+Show me some <3 and download it from the  [Pebble Appstore](https://apps.getpebble.com/applications/560c2846bc20af3407000090).
 
 ### Build & Install
 
@@ -15,10 +19,6 @@ Clone this repo then run the following:
 ### Stacktrace or GTFO
 
 We're all here to learn. Bugs, suggestions, pull requests and all that stuff welcome.
-
-### What's with the name?
-
-It pays homage to the unstoppable musical force that is [Foals](https://play.spotify.com/track/6VyAdiXrCAhbX3PoQzcVPL?play=true&utm_source=open.spotify.com&utm_medium=open), who take the credit for being the soundtrack to this moonlight coding endeavour.
 
 ### Credits
 
